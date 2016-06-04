@@ -1,0 +1,140 @@
+// ********** シーン描画用 **********
+float4x4 WorldMtx : WORLD;		//本城 ワールドマトリクス
+float4x4 ViewMtx  : VIEW;		//本城 ビューマトリクス
+float4x4 ProjMtx  : PROJECTION;	//本城 プロジェクションマトリクス
+
+//本城 ライトの方向
+float3 g_LightLocalDirect  = float3( 1, 0, 0);
+
+//本城 視線ベクトル
+float3 g_EyeDirectVec = float3(0,0,1);
+
+//本城 光の強さ
+float3 g_AmbColor     = float3( 0.2f, 0.2f, 0.2f);
+float3 g_DiffuseColor = float3( 0.8f, 0.8f, 0.8f);
+
+//本城 反射率
+float3 g_AmbRefColor     = float3( 1.0f, 1.0f, 1.0f);
+float3 g_DiffuseRefColor = float3( 1.0f, 1.0f, 1.0f);
+
+
+
+
+//ディフューズテクスチャ
+texture diffuseTex;
+sampler diffuseTexSampler = sampler_state
+{
+    Texture   = (diffuseTex);
+    
+    //テクスチャへの処理
+    MipFilter = LINEAR;
+    MinFilter = LINEAR;
+    MagFilter = LINEAR;
+}; 
+
+
+//頂点シェーダ
+//入力
+struct vertexInput {
+   float4 Pos		: POSITION;		// 座標(モデル空間)
+   float3 Normal    : NORMAL;		// 法線ベクトル
+   float4 TexUv		: TEXCOORD0;	// テクスチャＵＶ
+   float4 Color     : COLOR0;       // 色
+};
+
+//出力
+struct vertexOutput {
+   float4 Pos      : POSITION;   // 座標(射影空間)
+   float4 Color    : COLOR0;     // 色
+   float4 TexUv    : TEXCOORD0;	// テクスチャＵＶ
+   float3 WorldNormal   : TEXCOORD1;	// 法線(このようにピクセルシェーダに渡せば補間された法線が取得できる)
+}; 
+vertexOutput VS_VertexShader(vertexInput IN)
+{
+	vertexOutput OUT;
+
+	//本城 頂点
+	OUT.Pos =mul(IN.Pos, WorldMtx);
+	OUT.Pos =mul(OUT.Pos, ViewMtx);
+	OUT.Pos =mul(OUT.Pos, ProjMtx);
+
+	//本城 法線
+	float3 WorldNormal = mul(IN.Normal, WorldMtx);
+	WorldNormal = normalize(WorldNormal);
+
+	OUT.WorldNormal = WorldNormal;
+	OUT.TexUv       = IN.TexUv;
+
+	//本城 スペキュラ
+//	float3 EyeDirRef = -g_EyeDirectVec + 2.f * dot(WorldNormal, g_EyeDirectVec) * WorldNormal;
+//	float power = pow( max(0, dot(-g_LightLocalDirect, EyeDirRef)), 20);
+
+	//本城 色
+	OUT.Color = float4(
+			   (max(0, dot( WorldNormal, -g_LightLocalDirect))
+			   * (g_DiffuseColor * g_DiffuseRefColor)	//本城 diffuse
+  			   * IN.Color.rgb)
+			   + (g_AmbColor * g_AmbRefColor)			//本城 Ambient
+//			   + power									//本城 specular(phong)
+	, IN.Color.a);
+	
+	return OUT;
+}
+
+//ピクセルシェーダ
+//入力
+struct pInput {
+   float4 Color    : COLOR0;		// 色
+   float4 TexUv	   : TEXCOORD0;		// テクスチャＵＶ
+   float3 WorldNormal : TEXCOORD1;	//本城 ワールド変換済みの法線
+};
+
+//出力
+struct pOutput {
+   float4 Color    : COLOR0;     // 色
+};
+pOutput PS_PixelShader(pInput IN)
+{
+	pOutput OUT;
+
+//	float power = dot( normalize(IN.WorldNormal), -normalize(g_LightLocalDirect));
+//	power = clamp( power, 0.2f, 1.0f);
+
+	//本城 カラー計算
+//	OUT.Color = tex2D(diffuseTexSampler, IN.TexUv);
+//	OUT.Color = float4(OUT.Color.rgb * , 1.f);	//本城 ライトのカラー適用
+//	OUT.Color.rgb *= power;
+
+	//本城 スペキュラ
+	float3 N = normalize(IN.WorldNormal);
+	float3 EyeDirRef = -g_EyeDirectVec + 2.f * dot(N, g_EyeDirectVec) * N;
+	float Power		= max(0, dot(-g_LightLocalDirect, EyeDirRef));
+	float SpePower = pow( abs(Power), 10.f);
+
+	OUT.Color = (IN.Color + SpePower)
+				* tex2D(diffuseTexSampler, IN.TexUv);
+
+	//本城 モノクロ
+//	OUT.Color.rgb = (OUT.Color.r + OUT.Color.g + OUT.Color.b) / 3.0f;
+
+	return OUT;
+}
+
+// ********** テクニックの定義 **********
+technique effect         
+{
+    pass Pass0            
+    {
+		// ステート設定
+		ZEnable = TRUE;					// Zバッファの設定
+		MultiSampleAntialias = FALSE;	// マルチ・サンプリングの設定
+		CullMode = CCW;                 // 背面カリング
+		ShadeMode = GOURAUD;			// グーロー	・シェーディングに設定
+		AlphaBlendEnable = FALSE;		// アルファ・ブレンディングを無効にする
+
+		// シェーダ設定
+		VertexShader = compile vs_2_0 VS_VertexShader();  // 頂点シェーダの設定
+		PixelShader  = compile ps_2_0 PS_PixelShader();   // ピクセル・シェーダの設定
+    }
+}
+//***************************************

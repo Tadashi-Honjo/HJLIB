@@ -1,0 +1,12 @@
+typedef 			char	hj_s8;
+typedef unsigned	char	hj_u8;
+typedef 			short	hj_s16;
+typedef unsigned	short	hj_u16;
+typedef 			int		hj_s32;
+typedef unsigned	int		hj_u32;
+typedef				float	hj_f32;
+typedef				double	hj_f64;
+typedef				char	hj_bool;
+typedef	unsigned	int		hj_color32;
+typedef char				hj_c8;
+typedef short				hj_wc16;

@@ -1,0 +1,147 @@
+﻿//--------------------------------------------------------------
+/*!	@file
+	@brief	hj色定義
+			
+	@author 本城 直志
+	@date	11/02/05
+*/
+//	Copyright (C) 2011 TadashiHonjo. All Rights Reserved. 
+//--------------------------------------------------------------
+
+// HJLib namespace
+namespace hj{
+
+// 色定義
+hj_color32 HJ_ANTIQUEWHITE 				= 0xFFFAEBD7;
+hj_color32 HJ_ALICEBLUE					= 0xFFF0F8FF;
+hj_color32 HJ_AQUAMARINE				= 0xFF7FFFD4;
+hj_color32 HJ_AZURE						= 0xFFF0FFFF;
+hj_color32 HJ_BEIGE						= 0xFFF5F5DC;
+hj_color32 HJ_BISQUE					= 0xFFFFE4C4;
+hj_color32 HJ_BLACK						= 0xFF000000;
+hj_color32 HJ_BLANCHEDALMOND			= 0xFFFFEBCD;
+hj_color32 HJ_BLUE						= 0xFF0000FF;
+hj_color32 HJ_BLUEVIOLET				= 0xFF8A2BE2;
+hj_color32 HJ_BROWN						= 0xFFA52A2A;
+hj_color32 HJ_BURLYWOOD					= 0xFFDEB887;
+hj_color32 HJ_CADETBLUE					= 0xFF5F9EA0;
+hj_color32 HJ_CHARTREUSE				= 0xFF7FFF00;
+hj_color32 HJ_CHOCOLATE					= 0xFFD2691E;
+hj_color32 HJ_CORAL						= 0xFFFF7F50;
+hj_color32 HJ_CORNFLOWERBLUE			= 0xFF6495ED;
+hj_color32 HJ_CORNSILK					= 0xFFFFF8DC;
+hj_color32 HJ_CYAN						= 0xFF00FFFF;
+hj_color32 HJ_DARKBLUE					= 0xFF00008B;
+hj_color32 HJ_DARKCYAN					= 0xFF008B8B;
+hj_color32 HJ_DARKGOLDENROD				= 0xFFB8860B;
+hj_color32 HJ_DARKGRAY					= 0xFFA9A9A9;
+hj_color32 HJ_DARKGREEN					= 0xFF006400;
+hj_color32 HJ_DARKKHAKI					= 0xFFBDB766;
+hj_color32 HJ_DARKMGENTA				= 0xFF8B008B;
+hj_color32 HJ_DARKOLIVEGREEN			= 0xFF556B2F;
+hj_color32 HJ_DARKORANGE				= 0xFFFF8C00;
+hj_color32 HJ_DARKORCHID				= 0xFF9932CC;
+hj_color32 HJ_DARKRED					= 0xFF8B0000;
+hj_color32 HJ_DARKSALMON				= 0xFFE9967A;
+hj_color32 HJ_DARKSEAGREEN				= 0xFF8FBC8F;
+hj_color32 HJ_DARKSLATEBLUE				= 0xFF483D8B;
+hj_color32 HJ_DARKSLATEGRAY				= 0xFF2F4F4F;
+hj_color32 HJ_DARKTURQUOISE				= 0xFF00CED1;
+hj_color32 HJ_DARKVIOLET				= 0xFF9400D3;
+hj_color32 HJ_DEEPPINK					= 0xFFFF1493;
+hj_color32 HJ_DEEPSKYBLUE				= 0xFF00BFFF;
+hj_color32 HJ_DIMGRAY					= 0xFF696969;
+hj_color32 HJ_DODGERBLUE				= 0xFF1E90FF;
+hj_color32 HJ_FIREBRICK					= 0xFFB22222;
+hj_color32 HJ_FLORALWHITE				= 0xFFFFFAF0;
+hj_color32 HJ_FORESTGREEN				= 0xFF228B22;
+hj_color32 HJ_GAINSBORO					= 0xFFDCDCDC;
+hj_color32 HJ_GHOSTWHITE				= 0xFFF8F8FF;
+hj_color32 HJ_GOLD						= 0xFFFFD700;
+hj_color32 HJ_GOLDENROD					= 0xFFDAA520;
+hj_color32 HJ_GRAY						= 0xFFBEBEBE;
+hj_color32 HJ_GREEN						= 0xFF00FF00;
+hj_color32 HJ_GREENYELLOW				= 0xFFADFF2F;
+hj_color32 HJ_HONEYDEW					= 0xFFF0FFF0;
+hj_color32 HJ_HOTPINK					= 0xFFFF69B4;
+hj_color32 HJ_INDIANRED					= 0xFFCD5C5C;
+hj_color32 HJ_IVORY						= 0xFFFFFFF0;
+hj_color32 HJ_KHAKI						= 0xFFF0E68C;
+hj_color32 HJ_LAVENDER					= 0xFFE6E6FA;
+hj_color32 HJ_LAVENDERBLUSH				= 0xFFFFF0F5;
+hj_color32 HJ_LAWNGREEN					= 0xFF7CFC00;
+hj_color32 HJ_LEMONCHIFFON				= 0xFFFFFACD;
+hj_color32 HJ_LIGHTBLUE					= 0xFFADD8E6;
+hj_color32 HJ_LIGHTCORAL				= 0xFFF08080;
+hj_color32 HJ_LIGHTGOLDENRODYELLOW		= 0xFFFAFAD2;
+hj_color32 HJ_LIGHTGRAY					= 0xFFD3D3D3;
+hj_color32 HJ_LIGHTGREEN				= 0xFF90EEE9;
+hj_color32 HJ_LIGHTPINK					= 0xFFFFB6C1;
+hj_color32 HJ_LIGHTSALMON				= 0xFFFFA07A;
+hj_color32 HJ_LIGHTSEAGREEN				= 0xFF20B2AA;
+hj_color32 HJ_LIGHTSLIGHTEBLUE			= 0xFF8470FF;
+hj_color32 HJ_LIGHTSKYBLUE				= 0xFF87CEFA;
+hj_color32 HJ_LIGHTSLATEGRAY			= 0xFF778899;
+hj_color32 HJ_LIGHTCYAN					= 0xFFE0FFFF;
+hj_color32 HJ_LIMEGREEN					= 0xFF32CD32;
+hj_color32 HJ_LINEN						= 0xFFFAF0E6;
+hj_color32 HJ_MAGENTA					= 0xFFFF00FF;
+hj_color32 HJ_MAROON					= 0xFFB03060;
+hj_color32 HJ_MEDIUMAQUAMARINE			= 0xFF66CDAA;
+hj_color32 HJ_MEDIUMBLUE				= 0xFF0000DC;
+hj_color32 HJ_MEDIUMORCHID				= 0xFFBA55D3;
+hj_color32 HJ_MEDIUMPURPLE				= 0xFF9370DB;
+hj_color32 HJ_MEDIUMSEAGREEN			= 0xFF3CB371;
+hj_color32 HJ_MEDIUMSLATEBLUE			= 0xFF7B68EE;
+hj_color32 HJ_MEDIUMSPRINGGREEN			= 0xFF00FA9A;
+hj_color32 HJ_MEDIUMTURQUOISE			= 0xFF48D1CC;
+hj_color32 HJ_MEDIUMYIOLERED			= 0xFFC71585;
+hj_color32 HJ_MIDNIGHTBLUE				= 0xFF191970;
+hj_color32 HJ_MINTCREAM					= 0xFFF5FFFA;
+hj_color32 HJ_MOCCASIN					= 0xFFFFE4C4;
+hj_color32 HJ_NAVYBLUE					= 0xFF000080;
+hj_color32 HJ_NAVAJOWHITE				= 0xFFFFDEAD;
+hj_color32 HJ_OLDLACE					= 0xFFFDF5E6;
+hj_color32 HJ_OLIVEDRAB					= 0xFF6B8E23;
+hj_color32 HJ_ORANGE					= 0xFFFFA500;
+hj_color32 HJ_ORANGERED					= 0xFFFF4500;
+hj_color32 HJ_ORCHID					= 0xFFDA70D6;
+hj_color32 HJ_PALEGOLDENROD				= 0xFFEEE8AA;
+hj_color32 HJ_PALEGREEN					= 0xFF98FB98;
+hj_color32 HJ_PALETURQUOISE				= 0xFFAFEEEE;
+hj_color32 HJ_PALEVIOLETRED				= 0xFFDB7093;
+hj_color32 HJ_PLUM						= 0xFFDDA0DD;
+hj_color32 HJ_PAPAYAWHIP				= 0xFFFFEFD5;
+hj_color32 HJ_PEACHPUFF					= 0xFFFFDAB9;
+hj_color32 HJ_PERU						= 0xFFCD853F;
+hj_color32 HJ_PINK						= 0xFFFFC0CB;
+hj_color32 HJ_POWDERBLUE				= 0xFFB0E0E6;
+hj_color32 HJ_PURPLE					= 0xFFA020F0;
+hj_color32 HJ_RED						= 0xFFFF0000;
+hj_color32 HJ_ROSYBROWN					= 0xFFBC8F8F;
+hj_color32 HJ_ROYALBLUE					= 0xFF4169E1;
+hj_color32 HJ_SADDLEBROWN				= 0xFF8B4513;
+hj_color32 HJ_SALMON					= 0xFFFA8072;
+hj_color32 HJ_SANDYBROWN				= 0xFFF4A460;
+hj_color32 HJ_SEAGREEN					= 0xFF2E8B57;
+hj_color32 HJ_SEASHELL					= 0xFFFFF5EE;
+hj_color32 HJ_SIENNA					= 0xFFA0522D;
+hj_color32 HJ_SKYBLUE					= 0xFF87CEEB;
+hj_color32 HJ_SLATEBLUE					= 0xFF6A5ACD;
+hj_color32 HJ_SNOW						= 0xFFFFFAFA;
+hj_color32 HJ_SPRINGGREEN				= 0xFF00FF7F;
+hj_color32 HJ_STEELBLUE					= 0xFF4682B4;
+hj_color32 HJ_SLATEGRAY					= 0xFF708090;
+hj_color32 HJ_STRAWBERRYMILK			= 0xFFFFE6F0;
+hj_color32 HJ_TAN						= 0xFFD2B48C;
+hj_color32 HJ_THISTLE					= 0xFFD8BFD8;
+hj_color32 HJ_TOMATO					= 0xFFFF6347;
+hj_color32 HJ_TURQUOISE					= 0xFF40E0D0;
+hj_color32 HJ_VIOLET					= 0xFFEE82EE;
+hj_color32 HJ_WHITE						= 0xFFFFFFFF;
+hj_color32 HJ_WHITESMOKE				= 0xFFF5F5F5;
+hj_color32 HJ_YELLOW					= 0xFFFFFF00;
+hj_color32 HJ_YELLOWGREEN				= 0xFF9ACD32;
+
+
+}// namespace hj

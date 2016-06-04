@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3575354A-41BF-439B-859D-127A752BC8E6}</ProjectGuid>
+    <RootNamespace>WinDxCore</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.24730.2</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>WinDxCoreStdafx.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <ForcedIncludeFiles>WinDxCoreStdafx.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>WinDxCoreStdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat />
+      <ForcedIncludeFiles>WinDxCoreStdafx.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\core\HJAsciiFont.cpp" />
+    <ClCompile Include="..\..\..\src\core\HJCamera.cpp" />
+    <ClCompile Include="..\..\..\src\core\HJCamera2d.cpp" />
+    <ClCompile Include="..\..\..\src\core\HJColor.cpp" />
+    <ClCompile Include="..\..\..\src\core\HJCoreMgr.cpp" />
+    <ClCompile Include="..\..\..\src\core\HJCriticalSection.cpp" />
+    <ClCompile Include="..\..\..\src\core\HJDraw2d.cpp" />
+    <ClCompile Include="..\..\..\src\core\HJDraw3d.cpp" />
+    <ClCompile Include="..\..\..\src\core\HJDrawPrimitive.cpp" />
+    <ClCompile Include="..\..\..\src\core\HJEntity.cpp" />
+    <ClCompile Include="..\..\..\src\core\HJFileMgr.cpp" />
+    <ClCompile Include="..\..\..\src\core\HJFpsMgr.cpp" />
+    <ClCompile Include="..\..\..\src\core\HJGraphics.cpp" />
+    <ClCompile Include="..\..\..\src\core\HJHeapMomoryMgr.cpp" />
+    <ClCompile Include="..\..\..\src\core\HJInput.cpp" />
+    <ClCompile Include="..\..\..\src\core\HJMain.cpp" />
+    <ClCompile Include="..\..\..\src\core\HJMath.cpp" />
+    <ClCompile Include="..\..\..\src\core\HJMatrix.cpp" />
+    <ClCompile Include="..\..\..\src\core\HJMesh.cpp" />
+    <ClCompile Include="..\..\..\src\core\HJModel.cpp" />
+    <ClCompile Include="..\..\..\src\core\HJParticleEmitter2d.cpp" />
+    <ClCompile Include="..\..\..\src\core\HJResource.cpp" />
+    <ClCompile Include="..\..\..\src\core\HJShader.cpp" />
+    <ClCompile Include="..\..\..\src\core\HJSound.cpp" />
+    <ClCompile Include="..\..\..\src\core\HJSprite.cpp" />
+    <ClCompile Include="..\..\..\src\core\HJString.cpp" />
+    <ClCompile Include="..\..\..\src\core\HJSystem.cpp" />
+    <ClCompile Include="..\..\..\src\core\HJTexture.cpp" />
+    <ClCompile Include="..\..\..\src\core\HJThread.cpp" />
+    <ClCompile Include="..\..\..\src\core\HJTime.cpp" />
+    <ClCompile Include="..\..\..\src\core\HJVector.cpp" />
+    <ClCompile Include="WinDxCoreStdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">WinDxCoreStdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\include\core\HJAsciiFont.h" />
+    <ClInclude Include="..\..\..\include\core\HJCamera.h" />
+    <ClInclude Include="..\..\..\include\core\HJCamera2d.h" />
+    <ClInclude Include="..\..\..\include\core\HJColor.h" />
+    <ClInclude Include="..\..\..\include\core\HJCore.h" />
+    <ClInclude Include="..\..\..\include\core\HJCoreMgr.h" />
+    <ClInclude Include="..\..\..\include\core\HJCriticalSection.h" />
+    <ClInclude Include="..\..\..\include\core\HJDraw2d.h" />
+    <ClInclude Include="..\..\..\include\core\HJDraw3d.h" />
+    <ClInclude Include="..\..\..\include\core\HJDrawPrimitive.h" />
+    <ClInclude Include="..\..\..\include\core\HJEntity.h" />
+    <ClInclude Include="..\..\..\include\core\HJFileMgr.h" />
+    <ClInclude Include="..\..\..\include\core\HJFpsMgr.h" />
+    <ClInclude Include="..\..\..\include\core\HJGraphics.h" />
+    <ClInclude Include="..\..\..\include\core\HJHeapMemoryMgr.h" />
+    <ClInclude Include="..\..\..\include\core\HJInput.h" />
+    <ClInclude Include="..\..\..\include\core\HJMain.h" />
+    <ClInclude Include="..\..\..\include\core\HJMath.h" />
+    <ClInclude Include="..\..\..\include\core\HJMatrix.h" />
+    <ClInclude Include="..\..\..\include\core\HJMesh.h" />
+    <ClInclude Include="..\..\..\include\core\HJModel.h" />
+    <ClInclude Include="..\..\..\include\core\HJNew.h" />
+    <ClInclude Include="..\..\..\include\core\HJParticleEmitter2d.h" />
+    <ClInclude Include="..\..\..\include\core\HJPrototype.h" />
+    <ClInclude Include="..\..\..\include\core\HJRenderTarget.h" />
+    <ClInclude Include="..\..\..\include\core\HJResource.h" />
+    <ClInclude Include="..\..\..\include\core\HJScene.h" />
+    <ClInclude Include="..\..\..\include\core\HJShader.h" />
+    <ClInclude Include="..\..\..\include\core\HJSharedPtr.h" />
+    <ClInclude Include="..\..\..\include\core\HJSingleton.h" />
+    <ClInclude Include="..\..\..\include\core\HJSound.h" />
+    <ClInclude Include="..\..\..\include\core\HJSprite.h" />
+    <ClInclude Include="..\..\..\include\core\HJString.h" />
+    <ClInclude Include="..\..\..\include\core\HJSystem.h" />
+    <ClInclude Include="..\..\..\include\core\HJTexture.h" />
+    <ClInclude Include="..\..\..\include\core\HJThread.h" />
+    <ClInclude Include="..\..\..\include\core\HJTime.h" />
+    <ClInclude Include="..\..\..\include\core\HJVector.h" />
+    <ClInclude Include="..\..\..\include\HJLib.h" />
+    <ClInclude Include="WinDxCoreStdafx.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

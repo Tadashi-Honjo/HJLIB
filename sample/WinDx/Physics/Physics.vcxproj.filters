@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\Physics">
+      <UniqueIdentifier>{24102c16-4b91-4908-9151-4e0488b399d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Physics">
+      <UniqueIdentifier>{2a803939-8f96-4c3b-b4cf-e49c8cd04e10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Physics\vectormath">
+      <UniqueIdentifier>{84ccadc7-9af4-4881-9f05-ec1518edb8f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="プリコンパイルヘッダ">
+      <UniqueIdentifier>{b4bd4b28-443b-47c4-8cf7-040848dc2f7d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics\HJPhysics.cpp">
+      <Filter>ソース ファイル\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics\HJPhysicsDef.cpp">
+      <Filter>ソース ファイル\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics\HJRigitBody.cpp">
+      <Filter>ソース ファイル\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics\HJWorld.cpp">
+      <Filter>ソース ファイル\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>プリコンパイルヘッダ</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Physics\HJPhysics.h">
+      <Filter>ヘッダー ファイル\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\HJPhysicsDef.h">
+      <Filter>ヘッダー ファイル\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\HJRigitBody.h">
+      <Filter>ヘッダー ファイル\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\HJWorld.h">
+      <Filter>ヘッダー ファイル\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\vectormath\boolInVec.h">
+      <Filter>ヘッダー ファイル\Physics\vectormath</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\vectormath\floatInVec.h">
+      <Filter>ヘッダー ファイル\Physics\vectormath</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\vectormath\mat_aos.h">
+      <Filter>ヘッダー ファイル\Physics\vectormath</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\vectormath\quat_aos.h">
+      <Filter>ヘッダー ファイル\Physics\vectormath</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\vectormath\vec_aos.h">
+      <Filter>ヘッダー ファイル\Physics\vectormath</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\vectormath\vectormath_aos.h">
+      <Filter>ヘッダー ファイル\Physics\vectormath</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>プリコンパイルヘッダ</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{11D7B32C-E227-4993-9721-0E01AC8C0FD8}</ProjectGuid>
+    <RootNamespace>WinDxHjLib</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.24730.2</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>WinDxStdafx.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <ForcedIncludeFiles>WinDxStdafx.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>winmm.lib;d3d9.lib;d3dx9.lib;dinput8.lib;dxguid.lib;Strmiids.lib;$(ProjectDir)\core\$(Configuration)\WinDxCore.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)HJLib_D.lib</OutputFile>
+    </Lib>
+    <PostBuildEvent>
+      <Message>.libコピー</Message>
+      <Command>copy $(OutDir)HJLib_D.lib $(ProjectDir)..\..\lib\WinDx\</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>WinDxStdafx.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat />
+      <ForcedIncludeFiles>WinDxStdafx.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>winmm.lib;d3d9.lib;d3dx9.lib;dinput8.lib;dxguid.lib;Strmiids.lib;$(ProjectDir)\core\$(Configuration)\WinDxCore.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)HJLib.lib</OutputFile>
+    </Lib>
+    <PostBuildEvent>
+      <Message>.libコピー</Message>
+      <Command>copy $(OutDir)HJLib.lib $(ProjectDir)..\..\lib\WinDx\</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\WinDx\WinDxCoreMgr.cpp" />
+    <ClCompile Include="..\..\src\WinDx\WinDxCriticalSection.cpp" />
+    <ClCompile Include="..\..\src\WinDx\WinDxDraw2d.cpp" />
+    <ClCompile Include="..\..\src\WinDx\WinDxDraw3d.cpp" />
+    <ClCompile Include="..\..\src\WinDx\WinDxFileMgr.cpp" />
+    <ClCompile Include="..\..\src\WinDx\WinDxGraphics.cpp" />
+    <ClCompile Include="..\..\src\WinDx\WinDxInput.cpp" />
+    <ClCompile Include="..\..\src\WinDx\WinDxMain.cpp" />
+    <ClCompile Include="..\..\src\WinDx\WinDxMesh.cpp" />
+    <ClCompile Include="..\..\src\WinDx\WinDxModel.cpp" />
+    <ClCompile Include="..\..\src\WinDx\WinDxRenderTarget.cpp" />
+    <ClCompile Include="..\..\src\WinDx\WinDxScene.cpp" />
+    <ClCompile Include="..\..\src\WinDx\WinDxShader.cpp" />
+    <ClCompile Include="..\..\src\WinDx\WinDxSound.cpp" />
+    <ClCompile Include="..\..\src\WinDx\WinDxSoundWave.cpp" />
+    <ClCompile Include="..\..\src\WinDx\WinDxSprite.cpp" />
+    <ClCompile Include="..\..\src\WinDx\WinDxTexture.cpp" />
+    <ClCompile Include="..\..\src\WinDx\WinDxThread.cpp" />
+    <ClCompile Include="..\..\src\WinDx\WinDxTime.cpp" />
+    <ClCompile Include="..\..\src\WinDx\WinDxWindow.cpp" />
+    <ClCompile Include="WinDxStdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\WinDx\PfWinDx.h" />
+    <ClInclude Include="..\..\include\WinDx\WinDxCoreMgr.h" />
+    <ClInclude Include="..\..\include\WinDx\WinDxCriticalSection.h" />
+    <ClInclude Include="..\..\include\WinDx\WinDxDraw2d.h" />
+    <ClInclude Include="..\..\include\WinDx\WinDxDraw3d.h" />
+    <ClInclude Include="..\..\include\WinDx\WinDxFileMgr.h" />
+    <ClInclude Include="..\..\include\WinDx\WinDxGraphics.h" />
+    <ClInclude Include="..\..\include\WinDx\WinDxInit.h" />
+    <ClInclude Include="..\..\include\WinDx\WinDxInput.h" />
+    <ClInclude Include="..\..\include\WinDx\WinDxMain.h" />
+    <ClInclude Include="..\..\include\WinDx\WinDxMesh.h" />
+    <ClInclude Include="..\..\include\WinDx\WinDxModel.h" />
+    <ClInclude Include="..\..\include\WinDx\WinDxRenderTarget.h" />
+    <ClInclude Include="..\..\include\WinDx\WinDxScene.h" />
+    <ClInclude Include="..\..\include\WinDx\WinDxShader.h" />
+    <ClInclude Include="..\..\include\WinDx\WinDxSound.h" />
+    <ClInclude Include="..\..\include\WinDx\WinDxSoundWave.h" />
+    <ClInclude Include="..\..\include\WinDx\WinDxSprite.h" />
+    <ClInclude Include="..\..\include\WinDx\WinDxTexture.h" />
+    <ClInclude Include="..\..\include\WinDx\WinDxThread.h" />
+    <ClInclude Include="..\..\include\WinDx\WinDxTime.h" />
+    <ClInclude Include="..\..\include\WinDx\WinDxWindow.h" />
+    <ClInclude Include="WinDxStdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="core\WinDxCore.vcxproj">
+      <Project>{3575354a-41bf-439b-859d-127a752bc8e6}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

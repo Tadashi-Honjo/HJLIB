@@ -1,0 +1,44 @@
+//--------------------------------------------------------------
+/*!	@file
+	@brief	.hjmd HJモデルバイナリ
+
+	@author 本城 直志
+	@date	14/01/06
+*/
+//	Copyright (C) 2014 TadashiHonjo. All Rights Reserved. 
+//--------------------------------------------------------------
+#include "typedef.h"
+#include "typedef_hj.h"
+
+//! 出力モデルデータヘッダ
+struct stcModelHeader{
+	hj_c8		header[4];						// 'HJMD'
+	hj_u8		u8VersionMajor, u8VersionMinor;	// バージョン
+	hj_u8		u8Pad[2];
+	hj_u32		u32MeshNum;						// メッシュ数
+	// ↓にstcMeshOffsetHeaderがu32MeshNum分並ぶ
+};
+struct stcMeshHeader{
+	hj_u32	u32VertexNum;
+	hj_u32	u32VertexIndexNum;
+	hj_u32	u32VertexListOffset;				// 頂点リストへのオフセット(stcMeshHeaderからの)
+	hj_u32	u32VertexIndexListOffset;			// 頂点インデックスリストのオフセット(stcMeshHeaderからの)
+};
+
+struct stcFormat_PCT{
+	hj_f32		f32x, f32y, f32z;
+	hj_color32	u32Color;
+	hj_f32		f32u, f32v;
+};
+
+
+// 出力
+$stcModelHeader	sHeader;
+$stcMeshHeader	asMeshHeader[sHeader.u32MeshNum];
+
+for (int i=0;i<sHeader.u32MeshNum;i++){
+	$stcFormat_PCT asVertexs[ asMeshHeader.u32VertexNum ];
+	$hj_u32 asVertexIndexs[ asMeshHeader.u32VertexIndexNum ];
+}
+
+
